@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <style>
+        /* Your CSS Styles from the Flask Template */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>About</h1>
+    </header>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Content -->
+    <div class="content">
+        <h1>About Online University Support</h1>
+        <p>At Online University Support, we are committed to providing students with the resources and guidance they need to succeed in their academic journey. Our services are designed to support you every step of the way, from course registration to graduation.</p>
+
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>Expert guidance from experienced advisors</li>
+            <li>Comprehensive support for all aspects of your academic journey</li>
+            <li>Personalized assistance tailored to your individual needs</li>
+            <li>24/7 technical support for any online learning challenges</li>
+        </ul>
+
+        <p>Contact us today to learn more about how we can help you achieve your academic goals.</p>
+    </div>
+    
+    <!-- Dialogflow Messenger -->
+    <df-messenger
+      project-id="applied-craft-433912-n3"
+      agent-id="7f63ac71-0c71-4b5f-b3e0-e4773961807f"
+      language-code="en"
+      max-query-length="-1">
+      <df-messenger-chat-bubble
+       chat-title="Student Advisory System">
+      </df-messenger-chat-bubble>
+</body>
+</html>

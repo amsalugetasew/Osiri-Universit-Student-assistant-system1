@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <style>
+        /* General Reset and Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Header Styles */
+        header {
+            background-size: cover;
+            background-position: center;
+            color: #ecf0f1;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: rgba(52, 73, 94, 0.8); /* Make the sidebar slightly transparent */
+            color: #ecf0f1;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: #bdc3c7;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #2980b9;
+            color: #ecf0f1;
+        }
+
+        /* Content Styles */
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent content background */
+            background-image: url('new.png'); /* Background image for the header */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 80px; /* Adds space below the header */
+            flex: 1; /* Allows content to grow */
+            margin-left: 290px;
+            color: #fff;
+        }
+
+        .content h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .content ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        .content ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Dialogflow Messenger Styles */
+        df-messenger {
+            z-index: 1000;
+            position: fixed;
+            --df-messenger-font-color: #2c3e50;
+            --df-messenger-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --df-messenger-chat-background: #f0f8ff; /* New chat background color */
+            --df-messenger-message-user-background: #2980b9; /* User message background */
+            --df-messenger-message-bot-background: #ffffff; /* Bot message background */
+            bottom: 16px;
+            right: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        df-messenger-chat-bubble {
+            --df-messenger-chat-bubble-color: #3498db; /* Chat bubble color */
+            --df-messenger-chat-bubble-font-size: 16px;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .content {
+                margin-left: 200px;
+                padding: 20px;
+            }
+
+            header, .sidebar, .content {
+                font-size: 90%;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                padding: 15px;
+            }
+
+            .content {
+                margin-left: 0;
+                margin-top: 20px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Home</h1>
+    </header>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Content -->
+    <div class="content">
+        <h1>Welcome to Online University Support</h1>
+        <p>We offer comprehensive support services to guide you from enrollment to graduation. Explore our services or get in touch for personalized assistance.</p>
+
+        <h2>Our Core Services</h2>
+        <ul>
+            <li>📚 <strong>Student Registration Process Assistance:</strong> Provide seamless support to help you register for your courses.</li>
+            <li>🗓️ <strong>Course Selection Guidance:</strong> Expert advice to help you choose the right courses.</li>
+            <li>🎓 <strong>Enrollment Information:</strong> Students can get enrollment information.</li>
+            <li>💻 <strong>Technical Support:</strong> 24/7 support to solve enrollment technical issues, even course-related technical issues for Data Science and Information Systems programs.</li>
+        </ul>
+
+        <p>Ready to start? <a href="contact.html">Contact us today</a> and let us help you achieve your academic goals!</p>
+    </div>
+    
+    <!-- Dialogflow Messenger -->
+    <df-messenger
+      project-id="applied-craft-433912-n3"
+      agent-id="7f63ac71-0c71-4b5f-b3e0-e4773961807f"
+      language-code="en"
+      max-query-length="-1">
+      <df-messenger-chat-bubble
+       chat-title="Student Advisory System">
+      </df-messenger-chat-bubble>
+    </df-messenger>
+</body>
+</html>
