@@ -8,6 +8,147 @@
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
     <style>
         /* Your CSS Styles from the Flask Template */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Header Styles */
+        header {
+            background-size: cover;
+            background-position: center;
+            color: #0cbbe7;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: rgba(52, 73, 94, 0.8); /* Make the sidebar slightly transparent */
+            color: #ecf0f1;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: #bdc3c7;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #2980b9;
+            color: #ecf0f1;
+        }
+
+        /* Content Styles */
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent content background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 80px; /* Adds space below the header */
+            flex: 1; /* Allows content to grow */
+            margin-left: 290px;
+        }
+
+        .content h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .content ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        .content ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Dialogflow Messenger Styles */
+        df-messenger {
+            z-index: 1000;
+            position: fixed;
+            --df-messenger-font-color: #2c3e50;
+            --df-messenger-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --df-messenger-chat-background: #f0f8ff; /* New chat background color */
+            --df-messenger-message-user-background: #2980b9; /* User message background */
+            --df-messenger-message-bot-background: #ffffff; /* Bot message background */
+            bottom: 16px;
+            right: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        df-messenger-chat-bubble {
+            --df-messenger-chat-bubble-color: #3498db; /* Chat bubble color */
+            --df-messenger-chat-bubble-font-size: 16px;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .content {
+                margin-left: 200px;
+                padding: 20px;
+            }
+
+            header, .sidebar, .content {
+                font-size: 90%;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                padding: 15px;
+            }
+
+            .content {
+                margin-left: 0;
+                margin-top: 20px;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
